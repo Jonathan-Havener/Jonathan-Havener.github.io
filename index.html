@@ -113,22 +113,40 @@
 		
 		<h1>Week 5: 2/24</h1>
 		<h2>John </h2>
+		<p>This week, I worked mostly on game logic for the first level. I added a Drink struct that allows us to add drinks via the inspector. This will make it easier in the future to add new drinks to levels: we simply fill in some fields in the inspector and, without any further work, that drink will be added to the level. Other than that, I worked on the customer ordering and serving aspects. For customer ordering, I worked with Matthew to develop a UI that goes above the customer’s head that displays the name, contents, and timer for their order (if the timer expires before the customer is served, the customer object is destroyed and no points are given for that order). For customer serving, I added a static DataManager script that keeps track of the overall score for the player (along with text above the object selection UI showing the player’s current score). When a customer is served, the score for the drink is calculated and added to the overall score for the player.</p>
 		<h2>Matthew</h2>
 		<h2>Jonathan</h2>
 		<p>Developed the pouring mechanics. A particle system should arch from a point. On collision with a bottle, the bottle should spawn spheres that represent the liquid in the drink. </p>
 		
 		<h1>Week 6: 3/3</h1>
 		<h2>John </h2>
+		<p>This week, I finalized some of the game logic for the demo and worked with Jonathan to integrate the pouring system he had been working on with our game. We ran into some challenges with the physics of the cup (when the cup had a RigidBody attached to it, the filling mechanism didn’t work), so we worked around that by removing the RigidBody from the cup and putting in some custom physics. Once we had the pouring integrated, I worked on the scoring calculation for drinks. For now, the scoring system is as follows: 10 * (1 - percent_error) * (1 + fraction_time_left), where percent_error is the percent difference between the contents of the drink and the drink order, fraction_time_left is the fraction of time on the customer timer left when the player served the drink, and 10 is just a number I picked that made the scores come out nice (this is configurable via the inspector so that it can be changed as needed). Players who serve a drink that contains a liquid that isn’t supposed to be in the drink (i.e., serving rum in a tequila shot) automatically receive a score of zero for that drink. This calculation isn’t set in stone and is just a proof of concept that we can factor in accuracy of the drink and time to make the drink into the scoring calculation. We’re planning to revisit the scoring calculation in the future once we have more users test the game and give us feedback on the scoring.</p>
 		<h2>Matthew</h2>
 		<h2>Jonathan</h2>
 		<p> Attached the pouring mechanism to the liquor bottle. Assembled slides on the pouring mechanism for the first playable presentation.</p>
 		
 		<h1>Week 7: 3/10</h1>
+		<p>This week was spring break and we had just completed our goals for the First Playable presentation, so we took this as a time to step away from development for a week and do some research for future features. John researched character assets for the customers and how we can use their built-in animations in Unity, Matthew researched graphical raycasting to improve the UI of the game, and Jonathan researched shaders as a replacement for the spheres in the cups. </p>
+		
+		<h1>Week 8: 3/17</h1>
 		<h2>John </h2>
+		<p>This week, I worked mostly integrating the customer assets into our game. The asset pack we decided on is called “Low Poly Business People”. We chose it because it is low-poly and we didn’t want to hurt our game’s frame rate by introducing graphics-intensive characters, and this pack offered built-in animations at a cheap price. I worked on swapping out our placeholder characters with these characters (i.e., adding the billboard of the customer’s order above their head) and started working with the animations. Our goal for testing day is to have the customers walk from outside the bar to their seat, so we’ll need to integrate the walking and sitting animations. I started to play around with possible animation sequences and researched how to synchronize movement speed with animation speed and how to implement NPC navigation in Unity.</p>
 		<h2>Matthew</h2>
 		<h2>Jonathan</h2>
 		
-		<h1>Week 8: 3/17</h1>
+		<h1>Week 8: 3/24</h1>
+		<h2>John </h2>
+		<p>This week, I focused on customer animations and navigation. For navigation, I placed a Navmesh on the scene, and added a Navmesh Agent component to the customers to enable navigation. Their destinations are set dynamically when the customer is spawned; a random empty seat at the bar is chosen, then the destination for the Navmesh Agent is set to the location of that seat. This solved the movement aspect of the customers, but I needed the animations to synchronize with this as well. I used the built-in animations provided by the asset pack and created a custom Animation Controller for playing the customer’s animations. The conditions for transitions are set in our scripts for the game so that we have tight control over when the animations are played and what triggers them. Upon customer spawning, the walking animation is started and the Navmesh Agent destination is set to the seat that the customer is assigned to. When a customer arrives at the seat (which has a box collider to detect when this happens), a flag is set to tell the Animation Controller to start the sitting animation. When a customer is served or their timer runs out, a flag is set to tell the Animation Controller to start the standing/walking animation and the destination for the Navmesh Agent is set to a location outside the bar.</p>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		
+		<h1>Week 8: 3/31</h1>
+		<h2>John </h2>
+		<p>This week, I worked on adding support for beer tap pouring and selecting/serving bottled beers. The beer tap is an asset that came with the pub pack that we had purchased; however, it was purely decorational in the pack. To implement the functionality of the beer tap, I added capsule colliders to each of the levers to detect when players were hovering over them and I added a particle system (the same one that’s used for the bottles) below each of the nozzles. For the bottled beers, Jonathan created the animations for the fridge doors opening and closing, and I added a script that places a bottle of the type of beer that’s in the fridge in the player’s control whenever a player clicks on an opened fridge. I then added the logic to the customers for giving points for correctly served bottled beers since it differs from normal drinks in that the player is not pouring anything; the customer only needs to check that the type of bottled beer is correct (by checking the tag of the bottle’s GameObject) and then points are given based on how quickly it was served. For both the beer tap and fridges, I added labels for the type of beer that appear when you hover over a tap lever or fridge.</p>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		
+		<h1>Week 8: 4/7</h1>
 		<h2>John </h2>
 		<h2>Matthew</h2>
 		<h2>Jonathan</h2>
