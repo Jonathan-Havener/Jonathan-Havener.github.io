@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -256,3 +257,245 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AI for game design project</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="header-wrap">
+	<div class="logo">
+		<h1>Tipsy</h1>
+    </div>
+</div><!---header-wrap-End--->
+
+<div class="menu-wrap">
+	<div class="menu">
+		<ul>
+        	<!-- <li><a href="index.html" >Home</a></li> -->
+            <li><a href="#" class="active">About</a></li>
+            <!--<li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">contact</a></li>
+			-->
+        </ul>
+    </div>
+    
+    <div class="socia-wrap">
+	<div class="socail">
+		<ul>
+        	<li><a href="#"><img src="images/aim.png" alt="" /></a></li>
+        	<li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
+            <li><a href="#"><img src="images/twwtter.png" alt="" /></a></li>
+            <li><a href="#"><img src="images/linkedin.png" alt="" /></a></li>
+		</ul>
+	</div>
+</div>
+</div><!---menu-wrap-End--->
+
+<div class="page-wrap">
+<div class="wrap3">  
+  <div class=" leftcol">
+  <div class="panel">
+  	<div class="title">
+  		<h1>Developing Tipsy</h1>
+        <span>Developer updates on a student project</span>
+    </div>
+  	<div class="content">
+		<h1>Week 1: 1/27</h1>
+		<p>This week, we all worked on preparing our project presentation. 
+		This forced us to have a more clear idea on where we were going with 
+		our game in order to establish clear commitments for First Playable. 
+		We decided our commitments around some of the fundamental aspects of 
+		the game without worrying too much about aesthetics or minor details 
+		that we want in the final game: for the first playable, the user 
+		should be able to interact with objects in the VR environment (namely, 
+		the glass and bottle assets), be able to select which object to control 
+		through a UI, have the ability to create simple drinks (i.e., shots), 
+		there should be a point system based on the correctness/timeliness of 
+		a completed drink, and have customer NPCs that are spawned, order drinks,
+		and have a timer attached to them where the user must complete the 
+		customer’s drink within the time limit in order to receive points for 
+		the drink. As a group, we decided how to split up the work for the project 
+		in order to meet our commitments for First Playable. John is going to 
+		focus on the mechanics/controller interaction in the game because he 
+		has an interest in it and he is the one that owns the Go so he will 
+		have the most opportunity to tinker with it; he’ll also work on the 
+		game logic (i.e., how drinks are scored). Matthew will work on the UI 
+		components (the menus and other UI components of the game) and scene 
+		management (both writing scripts for switching between scenes and for 
+		the logic when a scene should be switched, i.e., at the end of a level) 
+		because he has background experience with both of these tasks in Unity. 
+		Jonathan will develop the website because he has prior experience in 
+		web development and he’ll develop/find art and audio assets.</p>
+		
+		<h1>Week 2: 2/3</h1>
+		<h2>John </h2>
+		<p>This week, I worked on interfacing Unity with the Oculus Integration 
+		package. Getting Unity to build for the Oculus Go involved downloading 
+		and configuring the necessary packages and figuring out how to utilize 
+		all the different sources of input from the headset (i.e., the rotation 
+		of the headset, the rotation of the controller, and the triggers/touchpad 
+		on the controller). I also created a script to do some basic object 
+		interaction. This involved creating a Raycast from the tip of the 
+		controller that, when the Raycast hits an object tagged “interactable”, 
+		the user can press the trigger to pick up the object and have the object’s 
+		position tied to the movement of the controller. Since the position of the 
+		controller is not tracked (there are no sensors that come with the Oculus 
+		Go; the only tracking for both the headset and controller is rotational), 
+		this involved moving the controller towards the direction of the change in 
+		rotation of the controller. For example, if the controller is rotated up, 
+		the object is moved upwards in space. </p>
+		<h2>Matthew</h2>
+		<p>Initial drafts of UI</p>
+		<h2>Jonathan</h2>
+		<p>Website</p>
+		
+		<h1>Week 3: 2/10</h1>
+		<p>This week, we decided on an asset pack to purchase for our objects/environment. We ended up going with a pack called 9t5 Low Poly Pub Pack. A screenshot of the demo scene that came with the pack is shown above. We decided to go with this pack for a few reasons. First, we were looking for a low-poly asset pack because we were afraid of what high-poly assets would do to our frame rate since our game is in VR. Second, we saw many bar packs, but not many that were both low-poly and contained all the assets we needed (both the bar scene and the glasses/bottles for drink pouring). Third, the pack is cheap; it only costs $5.</p>
+		<h2>John </h2>
+		<p>This week, I worked on improving the mechanics of our object interaction and getting object interaction working with the objects in the asset pack we purchased. I added rotation to the objects that were picked up to serve as the basis for pouring. I ended up disabling rotation when interacting with cups because it was making it difficult to set the cup down on the table properly when the cup was allowed to rotate. This is a tough decision because we want the game to feel as immersive as possible and like you’re actually picking up objects and pouring drinks, but it seems worth it for making the game play smoother. One challenge with getting object interaction working with the imported assets was that, since the objects were created in a 3D modelling application, the imported assets had a different default direction than Unity assets (the objects had their y and z axes switched when imported into Unity). This caused problems with our object interaction code because when one of these imported objects was picked up, the rotation of the object was sideways when it should have been standing straight. Through some searching, I found out this is a pretty common problem people run into when importing assets into Unity. The solution (which can be found here: https://docs.unity3d.com/Manual/HOWTO-FixZAxisIsUp.html) is to create an empty GameObject with the correct transform, and make the imported object a child of the empty GameObject. </p>
+		<h2>Matthew</h2>
+		<p>Designed UI for main menu and object interaction</p>
+		<h2>Jonathan</h2>
+		<p>Researched pouring mechanism</p>
+		
+		<h1>Week 4: 2/17</h1>
+		<h2>John </h2>
+		<p>This week, I worked on the mechanics of drink serving and added customer spawning. To serve drinks, I wrote a script that involved adding a Raycaster to the cup object that points directly down and checking whether it hits a bar seat. If it does and the user releases the cup, then the cup is slowly lowered to the bar mat in front of the customer (this is done using the MoveTowards() method to move the cup at a set speed until it reaches its destination), and the drink is “served”: the customer has a reference to the cup so that it can calculate the score for the drink (score calculation still needs to be added), then the both the customer and cup objects are destroyed in order to free up the seat for a new customer. Customers are randomly spawned at bar seats in randomly-generated intervals. The underlying logic behind this is that, although the bar seating looks continuous, it’s actually broken up into 6 distinct bar seats. Each of these bar seats can have an attached customer. When a new customer is to be spawned, the customer is assigned to a randomly-chosen empty seat (if there is one currently available; if all the seats are taken, then we wait until one frees up); each bar seat has a preset “customer location” transform where the customer should be placed. Then, when a cup is released over a specific bar seat, the script attached to the cup asks for the location to place the cup for that specific bar seat (this is preset just like the customer location), then the cup gradually moves towards that position. Once the cup reaches that position, the customer waits for a few seconds (this is when the score for the drink would be displayed), then the cup and customer objects are destroyed.</p>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		<p>Fixed a bug that prevented updates to the webpage to be stored on github's server</p>
+		
+		<h1>Week 5: 2/24</h1>
+		<h2>John </h2>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		<p>Developed the pouring mechanics. A particle system should arch from a point. On collision with a bottle, the bottle should spawn spheres that represent the liquid in the drink. </p>
+		
+		<h1>Week 6: 3/3</h1>
+		<h2>John </h2>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		<p> Attached the pouring mechanism to the liquor bottle. Assembled slides on the pouring mechanism for the first playable presentation.</p>
+		
+		<h1>Week 7: 3/10</h1>
+		<h2>John </h2>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		
+		<h1>Week 8: 3/17</h1>
+		<h2>John </h2>
+		<h2>Matthew</h2>
+		<h2>Jonathan</h2>
+		
+
+    	</div>
+  </div>	
+  </div>
+  
+  <div class="rightcol">
+  	<div class="panel">
+  		<div class="title"><h1>Meet the Developers</h1></div>
+    	<div class="content">
+        	<div class="icon"><img src="images/icon5.png" alt="icon" /></div>
+            <spna>Jonathan Havener</spna>
+            <p>*responsibilites*</p>
+        </div>
+        <div class="content marTop40">
+        	<div class="icon"><img src="images/icon5.png" alt="icon" /></div>
+            <spna>Matthew</spna>
+            <p>*responsibilites*</p>
+        </div>
+        <div class="content marTop40">
+        	<div class="icon"><img src="images/icon5.png" alt="icon" /></div>
+            <spna>John</spna>
+            <p>*responsibilites*</p>
+            <div class="button marTop30"><a href="#">More Info</a></div>
+        </div>
+    </div>
+	<!--
+  	<div class="panel marTop40">
+  		<div class="title"><h1>Nulla facilisi<br />Suspendisse aliquet</h1></div>
+    	<div class="content">
+        	<p>Mauris ornare eros in purus cursus molliam nec gravida magna.</p>
+            <ul>
+            	<li><a href="#">- Lorem ipsum dolor sit amet, consect</a></li>
+                <li><a href="#">- Duis varius lectus at nunc dignissim tin</a></li>
+                <li><a href="#">- Morbi ac mauris lacus, ac mol</a></li>
+                <li><a href="#">- Etiam sollicitudin nisi a leo porta</a></li>
+                <li class="bg-bottom"><a href="#">- Pellen sepien gravids loreet ornare</a></li>
+            </ul>
+            <div class="button marTop30"><a href="#">More Info</a></div>
+        </div>
+    </div>
+	-->
+  </div>  
+    
+  <div class="clearing"></div>
+</div>    
+</div><!---page-wrap-End--->
+<div class="footer-wrap">
+  <div class="wrap">
+	<!--
+    <div class="panel marRight30">
+      <div class="title">
+        <h1>Testimoniala</h1>
+      </div>
+      <div class="content">
+        <div class="testimonials"> Accusantium dolo remque la udantium totam  consequat tortor pretium sit amet volup </div>
+        <span>- John Goe</span> </div>
+    </div>
+    <div class="panel marRight30">
+      <div class="title">
+        <h1>Newsletter</h1>
+      </div>
+      <div class="content">
+        <ul>
+          <li>
+            <input name="input" type="text"  class="input-newsletter"/>
+          </li>
+          <li>
+            <input type="button" class="button" value="Signup" />
+          </li>
+        </ul>
+        <p>Vivamus lorem lectus, gravida a euismod ut, semper eu lectus lorem ipsum.</p>
+        <span><a href="#">Unsubscribe</a></span> </div>
+    </div>
+	-->
+    <div class="panel">
+      <div class="title">
+        <h1>Contact us </h1>
+      </div>
+      <div class="cotact">
+        <ul>
+          <li><img src="images/icon6.png" alt="" />(407) 463 8483</li>
+          <li><img src="images/icon7.png" alt="" /><a href="mailto:info@companyname.com">Jon.a.havener@gmail.com</a></li>
+          <li><img src="images/icon8.png" alt="" />Jonathan Havener</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clearing"></div>
+  </div>
+</div><!---footer-wrap--->
+<div class="clearing"></div>
+<!--
+<div class="copyright-wrap">
+	<div class="wrap">
+    	<div class="content">
+        <p>Copyright (c) websitename. All rights reserved.
+        <<a href="www.alltemplateneeds.com" class="active"> www.alltemplateneeds.com</a> > 
+        Images From:<a href="www.photorack.net"> www.photorack.net</a></p>
+        </div>
+	</div>
+</div>
+-->
+<!---copyright-wrap-End--->
+
+</body>
+</html>
+>>>>>>> 55ebacbf5098bb163051edbd7d78ee464721070f
