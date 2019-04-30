@@ -64,6 +64,7 @@
 			<div class="row">
 			<div class="col-md-7 pr-md-5 pr-0">
 				<h2 class="mb-5">Developer updates</h2>
+				<img src="images/Image1.png" alt="Italian Trulli">
 				<h3>Week 1: 1/27</h3>
 				<p>This week, we all worked on preparing our project presentation. 
 				This forced us to have a more clear idea on where we were going with 
@@ -91,6 +92,8 @@
 				Jonathan will develop the website because he has prior experience in 
 				web development and he’ll develop/find art and audio assets.</p>
 				
+				<img src="images/Image2.png" alt="Italian Trulli">
+				
 				<h3>Week 2: 2/3</h3>
 				<h3>John </h3>
 				<p>This week, I worked on interfacing Unity with the Oculus Integration 
@@ -113,6 +116,8 @@
 				<h3>Jonathan</h3>
 				<p>Website</p>
 				
+				<img src="images/Image3.png" alt="Italian Trulli">
+				
 				<h3>Week 3: 2/10</h3>
 				<p>This week, we decided on an asset pack to purchase for our objects/environment. We ended up going with a pack called 9t5 Low Poly Pub Pack. A screenshot of the demo scene that came with the pack is shown above. We decided to go with this pack for a few reasons. First, we were looking for a low-poly asset pack because we were afraid of what high-poly assets would do to our frame rate since our game is in VR. Second, we saw many bar packs, but not many that were both low-poly and contained all the assets we needed (both the bar scene and the glasses/bottles for drink pouring). Third, the pack is cheap; it only costs $5.</p>
 				<h3>John </h3>
@@ -121,6 +126,8 @@
 				<p>For this week I focused on the Main Menu layout and construction. I also worked on the construction for the Drink and Cocktail creation UI. This included making the UI perform as a dropdown to make the Cocktail construction UI more compact and user friendly.</p>
 				<h3>Jonathan</h3>
 				<p>Researched pouring mechanism</p>
+				
+				<img src="images/image4.png" alt="Italian Trulli">
 				
 				<h3>Week 4: 2/17</h3>
 				<h3>John </h3>
@@ -149,6 +156,9 @@
 				<h3>Week 7: 3/10</h3>
 				<p>This week was spring break and we had just completed our goals for the First Playable presentation, so we took this as a time to step away from development for a week and do some research for future features. John researched character assets for the customers and how we can use their built-in animations in Unity, Matthew researched graphical raycasting to improve the UI of the game, and Jonathan researched shaders as a replacement for the spheres in the cups. </p>
 				
+				<img src="images/image5.png" alt="Italian Trulli">
+
+				
 				<h3>Week 8: 3/17</h3>
 				<h3>John </h3>
 				<p>This week, I worked mostly integrating the customer assets into our game. The asset pack we decided on is called “Low Poly Business People”. We chose it because it is low-poly and we didn’t want to hurt our game’s frame rate by introducing graphics-intensive characters, and this pack offered built-in animations at a cheap price. I worked on swapping out our placeholder characters with these characters (i.e., adding the billboard of the customer’s order above their head) and started working with the animations. Our goal for testing day is to have the customers walk from outside the bar to their seat, so we’ll need to integrate the walking and sitting animations. I started to play around with possible animation sequences and researched how to synchronize movement speed with animation speed and how to implement NPC navigation in Unity.</p>
@@ -156,12 +166,17 @@
 				<p>For this week I am making a new type of UI for the Pour Meter. Originally we used a text meter that just showed the amount of liquid that was in the current container, but only showed the text of it. What I worked on this week was a physical meter that shows the current amount of liquid in the container and also shows a red line that is where the player should aim for as a final amount poured.</p>
 				<h3>Jonathan</h3>
 				
+				<img src="images/image6.png" alt="Italian Trulli">
+				
 				<h3>Week 8: 3/24</h3>
 				<h3>John </h3>
 				<p>This week, I focused on customer animations and navigation. For navigation, I placed a Navmesh on the scene, and added a Navmesh Agent component to the customers to enable navigation. Their destinations are set dynamically when the customer is spawned; a random empty seat at the bar is chosen, then the destination for the Navmesh Agent is set to the location of that seat. This solved the movement aspect of the customers, but I needed the animations to synchronize with this as well. I used the built-in animations provided by the asset pack and created a custom Animation Controller for playing the customer’s animations. The conditions for transitions are set in our scripts for the game so that we have tight control over when the animations are played and what triggers them. Upon customer spawning, the walking animation is started and the Navmesh Agent destination is set to the seat that the customer is assigned to. When a customer arrives at the seat (which has a box collider to detect when this happens), a flag is set to tell the Animation Controller to start the sitting animation. When a customer is served or their timer runs out, a flag is set to tell the Animation Controller to start the standing/walking animation and the destination for the Navmesh Agent is set to a location outside the bar.</p>
 				<h3>Matthew</h3>
 				<p>This week I focused my efforts to finishing up the fill meter UI and also did more research on how the Oculus Go understands World Space UI. I found some more information pertaining to the Input Module that the Oculus Go uses, and also how it interprets raycasts with UI. After many trials and errors we found that the Oculus can interact with built in Unity UIs. But the issue is that the raycast does not come from the Oculus remote, but instead from the top front of the Oculus Go headset. This is an issue because we want the controller to be the base of all interactions with interactable objects from the controller. </p>
 				<h3>Jonathan</h3>
+				
+				<img src="images/image7.png" alt="Italian Trulli">
+				<img src="images/image8.png" alt="Italian Trulli">
 				
 				<h3>Week 8: 3/31</h3>
 				<h3>John </h3>
@@ -222,7 +237,7 @@
             </div>
 			-->
 	
-			<img src="images/Image1.png" alt="Italian Trulli">
+			
           </div>
         </div>
       </div>
